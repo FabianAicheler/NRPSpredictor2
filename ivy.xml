@@ -6,8 +6,13 @@
 		<dependency org="jaxen" name="jaxen" rev="1.1.4"/>
 		<dependency org="gnu.getopt" name="java-getopt" rev="1.0.13"/>
 		<dependency org="tw.edu.ntu.csie" name="libsvm" rev="3.1"/>
-		<dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.16.0"/>
-		<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.16.0"/>
+		<!-- as of 16/12/21, Ivy fails to fetch secure log4j 2.16.0 when not excluding module -->
+		<dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.16.0">
+			<exclude module="log4j-api-java9" />
+		</dependency>
+		<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.16.0">
+			<exclude module="log4j-core-java9" />
+		</dependency>
 		<dependency org="org.codehaus.woodstox" name="stax2-api" rev="3.1.4"/>
 		
 	</dependencies>
